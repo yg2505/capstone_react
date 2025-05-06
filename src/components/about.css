@@ -1,0 +1,93 @@
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+} 
+ 
+.about-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  max-width: 600px;
+}
+  
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2b8cf4;
+  margin-bottom: 20px;
+}
+  
+.about-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgb(53, 50, 50);
+}
+  
+.about-subtitle {
+  font-size: 1.75rem;
+  color: #2b8cf4;
+  margin-bottom: 10px;
+}
+  
+.about-image {
+  flex: 1;
+  padding: 0 10px 0 0;
+  max-width: 900px;
+  max-height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+  
+.right{
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-section {
+  color: white;
+  padding-bottom: 20px;
+  flex: 1;
+  padding: 5px 20px 20px 20px;
+  text-align: left;
+}
+
+.impact-section .about-subtitle {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.impact-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.impact-card {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  width: 160px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.impact-card h4 {
+  font-size: 1.5rem;
+  color: #2b8cf4;
+  margin: 0;
+}
+
+.impact-card p {
+  margin: 8px 0 0;
+  font-size: 1rem;
+}

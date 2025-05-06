@@ -6,13 +6,13 @@ export default function HeroSection() {
     <section className="hero">
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1 className="hero-title">Support the Causes That Matter</h1>
+          <h1 className="hero-title">Turn Compassion Into Action</h1>
           <p className="hero-subtitle">
-            Discover and donate to verified charities with just a few clicks. Your generosity makes a difference.
+            Join a global community of givers. Support urgent causes and make lasting impact with just a few clicks.
           </p>
           <div className="hero-buttons">
-            <a href="/explore" className="btn primary">Explore Charities</a>
-            <a href="/about" className="btn secondary">Learn More</a>
+            <a href="/explore" className="btn primary">Donate Now</a>
+            <a href="/how-it-works" className="btn secondary">Learn More</a>
           </div>
         </div>
       </div>
