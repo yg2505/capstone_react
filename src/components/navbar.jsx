@@ -14,7 +14,7 @@ export default function Navbar({ onNavigate }) {
 
         <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
           <li onClick={() => onNavigate('home')}>Home</li>
-          <li><a href="/explore">Explore</a></li>
+          <li onClick={() => onNavigate('explore')}>Explore</li>
           <li onClick={() => onNavigate('about')}>About</li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/profile">Profile</a></li>
