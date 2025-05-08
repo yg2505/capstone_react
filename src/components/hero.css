@@ -49,8 +49,8 @@
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
-  text-decoration: none;
   transition: all 0.3s ease;
+  border: 1px solid gray;
 }
 
 .btn.primary {
@@ -68,5 +68,5 @@
 }
 
 .btn.secondary:hover {
-  background-color: #d1d5db;
+  background-color: #bac0c9;
 }

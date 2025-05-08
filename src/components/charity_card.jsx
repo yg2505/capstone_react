@@ -5,9 +5,8 @@ const ProjectCard = ({ project }) => (
     
   <div className="project-card">
     <img
-      src={project.image?.imagelink?.[0]?.url}
+      src={project.image?.imagelink?.[5]?.url}
       alt={project.title}
-      srcSet={`${project.image?.imagelink?.[0]?.url}?w=400 400w, ${project.image?.imagelink?.[0]?.url}?w=800 800w, ${project.image?.imagelink?.[0]?.url}?w=1200 1200w`}
     />
     <h2 className="project-title">{project.title}</h2>
     <p className="project-summary">{project.summary}</p>

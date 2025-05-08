@@ -2,10 +2,10 @@ import React from 'react'
 import Hero from "./hero.jsx"
  
 
-const home = () => {
+const home = ({onNavigate}) => {
   return (
     <div>
-        <Hero/>
+        <Hero onNavigate={onNavigate}/>
     </div>
   )
 }

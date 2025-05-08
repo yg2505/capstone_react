@@ -1,7 +1,7 @@
 import React from 'react';
 import './hero.css';
 
-export default function HeroSection() {
+export default function HeroSection({onNavigate}) {
   return (
     <section className="hero">
       <div className="hero-overlay">
@@ -11,8 +11,8 @@ export default function HeroSection() {
             Join a global community of givers. Support urgent causes and make lasting impact with just a few clicks.
           </p>
           <div className="hero-buttons">
-            <a href="/explore" className="btn primary">Donate Now</a>
-            <a href="/how-it-works" className="btn secondary">Learn More</a>
+            <button className="btn primary" onClick={() => onNavigate('explore')}>Donate Now</button>
+            <button className="btn secondary" onClick={() => onNavigate('about')}>Learn More</button>
           </div>
         </div>
       </div>

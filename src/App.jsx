@@ -17,7 +17,7 @@ function App() {
     <div>
       <Navbar onNavigate={handleNavigation} />
 
-      {currentPage === 'home' && <Home />}
+      {currentPage === 'home' && <Home onNavigate={handleNavigation}/>}
       {currentPage === 'about' && <About />}
       {currentPage === 'explore' && <ExplorePage />}
 
