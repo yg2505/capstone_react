@@ -4,6 +4,8 @@ import Home from './components/home.jsx';
 import About from './components/about.jsx';
 import Footer from './components/footer.jsx';
 import ExplorePage from './components/explore.jsx';  
+import Profile from './components/profile.jsx';  
+import Blog from './components/blog.jsx';
 import './App.css'
 
 function App() {
@@ -20,9 +22,11 @@ function App() {
       {currentPage === 'home' && <Home onNavigate={handleNavigation}/>}
       {currentPage === 'about' && <About />}
       {currentPage === 'explore' && <ExplorePage />}
+      {currentPage === 'blog' && <Blog />}
+      {currentPage === 'profile' && <Profile/>}
 
       
-      
+    
       <Footer />
     </div>
   );
