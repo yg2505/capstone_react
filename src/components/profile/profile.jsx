@@ -7,9 +7,9 @@ const ProfilePage = () => {
     name: 'John Doe',
     email: 'john@example.com',
     bio: 'Passionate about technology and innovation.',
-    donations: '12',
-    money_donated: '10,000',
-    causes_supported: '8',
+    donations: '15',
+    money_donated: '40,000',
+    causes_supported: '5',
   });
 
   const [formData, setFormData] = useState(user);
