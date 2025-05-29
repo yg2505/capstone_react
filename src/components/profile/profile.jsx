@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './profile.css';
-import p_img from '../assets/handsome-happy-bearded-man.jpg';
+import p_img from '../../assets/handsome-happy-bearded-man.jpg';
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
@@ -47,11 +47,17 @@ const ProfilePage = () => {
         <div className="modal-overlay">
           <div className="modal">
             <h3>Edit Profile</h3>
+            <label>Name</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} />
+            <label>Email</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} />
+            <label>Bio</label>
             <textarea name="bio" value={formData.bio} onChange={handleChange}></textarea>
+            <label>Donations</label>
             <input type="number" name="donations" value={formData.donations} onChange={handleChange} />
+            <label>Money Donated</label>
             <input type="text" name="money_donated" value={formData.money_donated} onChange={handleChange} />
+            <label>Causes Supported</label>
             <input type="number" name="causes_supported" value={formData.causes_supported} onChange={handleChange} />
 
             <div className="modal-actions">

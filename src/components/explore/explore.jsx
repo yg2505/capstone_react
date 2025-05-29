@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchProjects } from './fetched.jsx';
+import { fetchProjects } from '../fetched.jsx';
 import ProjectCard from './charity_card.jsx';
 import './explore.css';
 

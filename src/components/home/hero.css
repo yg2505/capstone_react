@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;  
-  background-image: url('/Users/yashvigoyal/Desktop/capstone_react/cr/src/assets/people-holding-rubber-heart.jpg');  
+  background-image: url('../../assets/people-holding-rubber-heart.jpg');  
   background-size: cover;
   background-position: center;
   position: relative;
@@ -19,7 +19,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 700px;
+  height: 730px;
 }
 
 .hero-content {

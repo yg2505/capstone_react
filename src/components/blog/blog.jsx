@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './blog.css';
-import tech_img from "../assets/donation-community-service-volunteer-support.jpg"
-import sustainable from "../assets/elderly-person-children-holding-plant.jpg"
-import donations from "../assets/volunteer-giving-box-with-donations-another-volunteer.jpg"
-import community from "../assets/volunteer-handing-donation-box.jpg"
-import volunteer from "../assets/volunteers-teaming-up-organize-donations-charity.jpg"
+import tech_img from "../../assets/donation-community-service-volunteer-support.jpg"
+import sustainable from "../../assets/elderly-person-children-holding-plant.jpg"
+import donations from "../../assets/volunteer-giving-box-with-donations-another-volunteer.jpg"
+import community from "../../assets/volunteer-handing-donation-box.jpg"
+import volunteer from "../../assets/volunteers-teaming-up-organize-donations-charity.jpg"
 
 const BlogPage = () => {
   const blogs = [

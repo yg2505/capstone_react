@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';  
-import abtimg from '../assets/photorealistic-refugee-camp.jpg' 
+import abtimg from '../../assets/photorealistic-refugee-camp.jpg' 
 function About() {
   return (
     <div className="about-container">
