@@ -9,7 +9,7 @@ const ProfilePage = () => {
     bio: 'Passionate about technology and innovation.',
     donations: '15',
     money_donated: '40,000',
-    causes_supported: '5',
+    causes_supported: '6',
   });
 
   const [formData, setFormData] = useState(user);
