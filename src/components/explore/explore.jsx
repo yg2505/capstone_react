@@ -5,29 +5,17 @@ import './explore.css';
 
 const ExplorePage = () => {
   const [projects, setProjects] = useState([]);
-  const [nextProjectId, setNextProjectId] = useState(null);
   const [loading, setLoading] = useState(false);  // start with false to avoid flicker on first render
 
   useEffect(() => {
     const loadProjects = async () => {
       setLoading(true);
-      const { projects: initialProjects, nextProjectId } = await fetchProjects();
+      const { projects: initialProjects } = await fetchProjects();
       setProjects(initialProjects);
-      setNextProjectId(nextProjectId);
       setLoading(false);
     };
     loadProjects();
   }, []);
-
-  const loadMore = async () => {
-    if (!nextProjectId) return; // no more projects
-
-    setLoading(true);
-    const { projects: moreProjects, nextProjectId: newNextId } = await fetchProjects(nextProjectId);
-    setProjects((prev) => [...prev, ...moreProjects]);
-    setNextProjectId(newNextId);
-    setLoading(false);
-  };
 
   return (
     <div className="explore-page">
@@ -42,15 +30,6 @@ const ExplorePage = () => {
         ))}
       </div>
 
-      {/* Show Load More only if there are more projects and not loading */}
-      {nextProjectId && !loading && (
-        <button onClick={loadMore} className="load-more-btn">
-          Load More
-        </button>
-      )}
-
-      {/* Optional: Show loading text when fetching more */}
-      {loading && projects.length > 0 && <p>Loading more projects...</p>}
     </div>
   );
 };

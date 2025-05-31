@@ -1,13 +1,8 @@
 const BASE_URL = '/api/api/public/projectservice/featured/projects.json?api_key=e01c2d25-cf33-4932-becf-e919d9914f1a';
 
-export const fetchProjects = async (nextProjectId = null) => {
+export const fetchProjects = async () => {
   try {
-    // Construct URL with pagination param if exists
-    const url = nextProjectId
-      ? `${BASE_URL}&nextProjectId=${nextProjectId}`
-      : BASE_URL;
-
-    const response = await fetch(url, {
+    const response = await fetch(BASE_URL, {
       headers: {
         'Accept': 'application/json',
       },
@@ -18,17 +13,15 @@ export const fetchProjects = async (nextProjectId = null) => {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log("API response:", data);
 
     return {
       projects: data.projects?.project || [],
-      nextProjectId: data.nextProjectId || null,
     };
   } catch (error) {
     console.error("Error fetching projects:", error);
     return {
       projects: [],
-      nextProjectId: null,
     };
   }
 };
