@@ -10,6 +10,7 @@ const ExplorePage = () => {
   useEffect(() => {
     const loadProjects = async () => {
       setLoading(true);
+      await new Promise((res) => setTimeout(res, 1000));
       const { projects: initialProjects } = await fetchProjects();
       setProjects(initialProjects);
       setLoading(false);
@@ -20,15 +21,16 @@ const ExplorePage = () => {
   return (
     <div className="explore-page">
       <h1 className="explore-title">Explore Charity Projects</h1>
-
-      {/* Show loading message only if no projects yet */}
-      {loading && projects.length === 0 && <p>Loading projects...</p>}
-
-      <div className="project-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+ 
+      {loading ? (
+        <p>Loading projects...</p>
+      ) : (
+        <div className="project-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      )}
 
     </div>
   );

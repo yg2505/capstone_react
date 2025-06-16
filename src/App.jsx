@@ -6,7 +6,7 @@ import Footer from './components/footer/footer.jsx';
 import ExplorePage from './components/explore/explore.jsx';  
 import Profile from './components/profile/profile.jsx';  
 import Blog from './components/blog/blog.jsx';
-import './App.css'
+import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -19,14 +19,19 @@ function App() {
     <div>
       <Navbar onNavigate={handleNavigation} />
 
-      {currentPage === 'home' && <Home onNavigate={handleNavigation}/>}
+      {currentPage === 'home' && (
+        <>
+          <Home onNavigate={handleNavigation} />
+          <ExplorePage />
+          <About />
+        </>
+      )}
+
       {currentPage === 'about' && <About />}
       {currentPage === 'explore' && <ExplorePage />}
       {currentPage === 'blog' && <Blog />}
-      {currentPage === 'profile' && <Profile/>}
+      {currentPage === 'profile' && <Profile />}
 
-      
-    
       <Footer />
     </div>
   );
