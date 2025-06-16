@@ -1,4 +1,4 @@
-const BASE_URL = '/api/api/public/projectservice/featured/projects.json?api_key=e01c2d25-cf33-4932-becf-e919d9914f1a';
+const BASE_URL = 'https://api.globalgiving.org/api/public/projectservice/featured/projects.json?api_key=7a620d36-2596-43b9-b8bc-870f065869f5';
 
 export const fetchProjects = async () => {
   try {

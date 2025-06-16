@@ -41,7 +41,7 @@ function App() {
             </svg>
           </div>
 
-          <section className="about-section">
+          <section style={{backgroundColor:"#AEBD93"}}>
             <About />
           </section>
         </>
