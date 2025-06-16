@@ -21,9 +21,29 @@ function App() {
 
       {currentPage === 'home' && (
         <>
-          <Home onNavigate={handleNavigation} />
-          <ExplorePage />
-          <About />
+          <section className="home-section">
+            <Home onNavigate={handleNavigation} />
+          </section>
+
+          <div className="svg-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+              <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#2A2E3C" />
+            </svg>
+          </div>
+
+          <section className="explore-section">
+            <ExplorePage />
+          </section>
+
+          <div className="svg-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+              <path d="M0,100 C480,0 960,100 1440,0 L1440,100 L0,100 Z" fill="#AEBD93" />
+            </svg>
+          </div>
+
+          <section className="about-section">
+            <About />
+          </section>
         </>
       )}
 

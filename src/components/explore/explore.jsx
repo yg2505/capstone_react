@@ -10,7 +10,6 @@ const ExplorePage = () => {
   useEffect(() => {
     const loadProjects = async () => {
       setLoading(true);
-      await new Promise((res) => setTimeout(res, 1000));
       const { projects: initialProjects } = await fetchProjects();
       setProjects(initialProjects);
       setLoading(false);
