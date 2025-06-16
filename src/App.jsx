@@ -20,7 +20,7 @@ function App() {
       <Navbar onNavigate={handleNavigation} />
 
       {currentPage === 'home' && (
-        <>
+        <div style={{backgroundColor:"#A1683A"}}>
           <section className="home-section">
             <Home onNavigate={handleNavigation} />
           </section>
@@ -31,20 +31,20 @@ function App() {
             </svg>
           </div>
 
-          <section className="explore-section">
+          <section>
             <ExplorePage />
           </section>
 
           <div className="svg-divider">
             <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-              <path d="M0,100 C480,0 960,100 1440,0 L1440,100 L0,100 Z" fill="#AEBD93" />
+              <path d="M0,100 C480,0 960,100 1440,0 L1440,100 L0,100 Z" fill="#B8C5D6" />
             </svg>
           </div>
 
-          <section style={{backgroundColor:"#AEBD93"}}>
+          <section style={{backgroundColor:"#B8C5D6"}}>
             <About />
           </section>
-        </>
+        </div>
       )}
 
       {currentPage === 'about' && <About />}
