@@ -86,7 +86,12 @@
     transform: rotate(-45deg);
     top: 11px;
 }
-   
+
+.logout{
+    text-decoration: none;
+    
+}
+
 @media (max-width: 768px) {
     .navbar-links {
       position: absolute;
