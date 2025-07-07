@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './navbar.css';
 
-export default function Navbar({ onNavigate, onLogout, user }) {
+export default function Navbar({ onNavigate, onLogout}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);

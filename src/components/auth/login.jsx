@@ -18,11 +18,13 @@ function Login({ onNavigate }) {
   };
 
   return (
+    <div className='login-wrapper'>
     <div className='container'>
       <h2>Login</h2>
       <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
       <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
       <button onClick={handleLogin}>Login</button>
+    </div>
     </div>
   );
 }
