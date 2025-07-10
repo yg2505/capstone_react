@@ -6,23 +6,22 @@ import Navbar from './components/navbar/navbar.jsx';
 import Home from './components/home/home.jsx';
 import About from './components/about/about.jsx';
 import Footer from './components/footer/footer.jsx';
-import ExplorePage from './components/explore/explore.jsx';  
-import Profile from './components/profile/profile.jsx';  
+import ExplorePage from './components/explore/explore.jsx';
+import Profile from './components/profile/profile.jsx';
 import Blog from './components/blog/blog.jsx';
 import Login from './components/auth/login.jsx';
-
+import Impact from './components/impact/imp.jsx';
 
 import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [user, setUser] = useState(null); // 🔐 store logged-in user
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -36,45 +35,29 @@ function App() {
     setCurrentPage('login');
   };
 
-
   if (!user) {
     return (
       <div>
-        {
-          <Login onNavigate={handleNavigation} />
-        }
+        <Login onNavigate={handleNavigation} />
       </div>
     );
   }
-
 
   return (
     <div>
       <Navbar onNavigate={handleNavigation} onLogout={handleLogout} user={user} />
 
       {currentPage === 'home' && (
-        <div style={{ backgroundColor: "#A1683A" }}>
+        <div>
           <section className="home-section">
             <Home onNavigate={handleNavigation} />
           </section>
-
-          <div className="svg-divider">
-            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-              <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#2A2E3C" />
-            </svg>
-          </div>
-
-          <section>
+         
+          <section className="explore">
             <ExplorePage />
           </section>
 
-          <div className="svg-divider">
-            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-              <path d="M0,100 C480,0 960,100 1440,0 L1440,100 L0,100 Z" fill="#B8C5D6" />
-            </svg>
-          </div>
-
-          <section style={{ backgroundColor: "#B8C5D6" }}>
+          <section className="about">
             <About />
           </section>
         </div>
@@ -84,7 +67,7 @@ function App() {
       {currentPage === 'explore' && <ExplorePage />}
       {currentPage === 'blog' && <Blog />}
       {currentPage === 'profile' && <Profile />}
-
+      {currentPage === 'impact' && <Impact />}
       <Footer />
     </div>
   );
