@@ -1,59 +1,69 @@
-
-.login-wrapper{
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    height: 100vh;
+.login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    height: 100vh;
+    background: linear-gradient(to right, #4f8ef1, #1c5ee1);
+  }
   
-.container {
-    background-color: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    max-width: 350px;
+  .login-container {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
+    max-width: 400px;
     text-align: center;
-}
+  }
   
-.container h2 {
-    margin-bottom: 20px;
+  .login-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: #333;
-}
+  }
   
-.container input {
-    width: 90%;
-    padding: 12px 15px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-  
-.container input:focus {
-    outline: none;
-    border-color: #4facfe;
-    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2);
-}
-  
-.container button {
+  .login-input {
     width: 100%;
     padding: 12px;
-    background-color: #4facfe;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 1rem;
+    background: #0070f3;
     color: white;
-    font-size: 16px;
     border: none;
     border-radius: 8px;
-    margin-top: 10px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
+    transition: background 0.3s;
+  }
   
-.container button:hover {
-    background-color: #3e8efc;
-}
+  .login-button:hover {
+    background: #0059c1;
+  }
+  
+  .login-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  
+  .login-switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .link {
+    color: #0070f3;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+  }
   

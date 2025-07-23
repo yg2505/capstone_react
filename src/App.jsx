@@ -11,19 +11,29 @@ import Profile from './components/profile/profile.jsx';
 import Blog from './components/blog/blog.jsx';
 import Login from './components/auth/login.jsx';
 import Impact from './components/impact/imp.jsx';
+import Signup from './components/auth/signup.jsx';
+import Testimonials from './components/testimonials/tm.jsx';
+
 
 import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [user, setUser] = useState(null);
-
+ 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+      // Only update user state if not currently on signup page
+      if (currentPage !== 'signup') {
+        setUser(user);
+        if (!user && currentPage !== 'login') {
+          setCurrentPage('login');
+        }
+      }
     });
     return () => unsubscribe();
-  }, []);
+  }, [currentPage]);;
+
 
   const handleNavigation = (page) => {
     setCurrentPage(page);
@@ -38,10 +48,15 @@ function App() {
   if (!user) {
     return (
       <div>
-        <Login onNavigate={handleNavigation} />
+        {currentPage === 'signup' ? (
+          <Signup onNavigate={handleNavigation} />
+        ) : (
+          <Login onNavigate={handleNavigation} />
+        )}
       </div>
     );
   }
+  
 
   return (
     <div>
@@ -52,18 +67,18 @@ function App() {
           <section className="home-section">
             <Home onNavigate={handleNavigation} />
           </section>
-         
-          <section className="explore">
-            <ExplorePage />
-          </section>
 
           <section className="about">
             <About />
           </section>
+
+          <section>
+            <Testimonials/>
+          </section>
         </div>
       )}
 
-      {currentPage === 'about' && <About />}
+  
       {currentPage === 'explore' && <ExplorePage />}
       {currentPage === 'blog' && <Blog />}
       {currentPage === 'profile' && <Profile />}

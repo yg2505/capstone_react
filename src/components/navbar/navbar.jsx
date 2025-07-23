@@ -15,7 +15,6 @@ export default function Navbar({ onNavigate, onLogout}) {
           <li onClick={() => onNavigate('home')}>Home</li>
           <li onClick={() => onNavigate('explore')}>Explore</li>
           <li onClick={() => onNavigate('impact')}>Impact</li>
-          <li onClick={() => onNavigate('about')}>About</li>
           <li onClick={() => onNavigate('blog')}>Blog</li>
           <li onClick={() => onNavigate('profile')}>Profile</li>
           <li onClick={onLogout}>Logout</li>

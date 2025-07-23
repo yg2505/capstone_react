@@ -1,12 +1,13 @@
 .explore-page {
     padding: 4rem;
-     
+    background-color: #f0f6ff;
 }
 
 .explore-title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    color:#1e3a8a
 }
 
 .project-grid {
@@ -23,6 +24,12 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .project-card img {
@@ -37,6 +44,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color:#1e3a8a
 }
 
 .project-summary {
@@ -63,8 +71,8 @@
   }
   
   .theme-tag {
-    background-color: #e0f7fa;
-    color: #00796b;
+    background-color: #dfecff;
+    color: #007bff;
     padding: 0.3rem 0.6rem;
     border-radius: 12px;
     font-size: 0.85rem;

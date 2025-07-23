@@ -40,7 +40,7 @@ export default function ImpactPage() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem' ,  backgroundColor: '#f0f6ff', color:"#1e3a8a"}}>
       <h1>Donation Impact Visualization</h1>
       {loading ? (
         <p>Loading...</p>

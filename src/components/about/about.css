@@ -20,7 +20,7 @@
 .about-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2b8cf4;
+  color: #1e3a8a;
   margin-bottom: 20px;
 }
   
@@ -32,7 +32,7 @@
   
 .about-subtitle {
   font-size: 1.75rem;
-  color: #2b8cf4;
+  color: #1e3a8a;
   margin-bottom: 10px;
 }
   
@@ -49,6 +49,8 @@
 .about-image img {
   width: 100%;
   border-radius: 8px;
+  height: 600px;
+  margin-top: 45px;
 }
   
 .right{
