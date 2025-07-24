@@ -118,7 +118,30 @@
 .close-button:hover { 
   transform: scale(1.2);
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
 
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #ccc;
+}
+
+.pagination .active-page {
+  background-color: #1976d2;
+  color: white;
+}
 
  
 @keyframes fadeIn {

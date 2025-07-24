@@ -3,24 +3,27 @@ import { ref, onValue } from 'firebase/database';
 import { database } from '../auth/firebaseConfig';
 import './blog.css';
 
+const ITEMS_PER_PAGE = 8;
+
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const blogRef = ref(database, 'blogs');
     onValue(blogRef, (snapshot) => {
       let data = snapshot.val();
-      
+
       if (typeof data === 'string') {
         try {
-          data = JSON.parse(data); 
+          data = JSON.parse(data);
         } catch (e) {
           console.error("Failed to parse blog data:", e);
           return setBlogs([]);
         }
       }
-  
+
       if (data && typeof data === 'object') {
         const blogArray = Object.entries(data).map(([id, blog]) => ({
           id,
@@ -30,20 +33,23 @@ const BlogPage = () => {
           content: blog?.content || "No content",
           author: blog?.author || "Anonymous"
         }));
-        setBlogs(blogArray);
+        setBlogs(blogArray.reverse()); 
       } else {
         setBlogs([]);
       }
     });
   }, []);
-  
-  
-  
+
+  const totalPages = Math.ceil(blogs.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentBlogs = blogs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
   return (
     <div className="blog-container">
       <h1 className="blog-title">Our Blogs</h1>
+      
       <div className="blog-grid">
-        {blogs.map((blog, index) => (
+        {currentBlogs.map((blog, index) => (
           <div key={index} className="blog-card">
             <div className="blog-content">
               <h2>{blog.title}</h2>
@@ -52,6 +58,18 @@ const BlogPage = () => {
               <button className="read-more" onClick={() => setSelectedBlog(blog)}>Read More</button>
             </div>
           </div>
+        ))}
+      </div>
+
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index}
+            className={currentPage === index + 1 ? 'active-page' : ''}
+            onClick={() => setCurrentPage(index + 1)}
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
 

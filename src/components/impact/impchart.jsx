@@ -13,8 +13,6 @@ import React from 'react';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const ImpactChart = ({ data }) => {
-  console.log("📊 Data received by ImpactChart:", data);
-
   if (!data || data.length === 0) {
     return <p>Chart: No data</p>;
   }
