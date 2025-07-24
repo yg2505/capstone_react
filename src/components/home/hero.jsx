@@ -13,7 +13,7 @@ export default function HeroSection({ onNavigate }) {
           <button className="cta-btn donate" onClick={() => onNavigate('explore')}>
             Start Donating
           </button>
-          <button className="cta-btn learn" onClick={() => onNavigate('about')}>
+          <button className="cta-btn learn" onClick={() => onNavigate('impact')}>
             Discover More
           </button>
         </div>
