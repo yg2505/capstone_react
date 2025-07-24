@@ -30,6 +30,9 @@
     gap: 1.8rem;
     transition: all 0.3s ease;
 }
+.navbar-links.active {
+    color: #2563eb;
+  }
   
 .navbar-links li {
     text-decoration: none;

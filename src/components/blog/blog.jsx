@@ -11,14 +11,12 @@ const BlogPage = () => {
     const blogRef = ref(database, 'blogs');
     onValue(blogRef, (snapshot) => {
       let data = snapshot.val();
-      console.log("🔥 Raw blog data from Firebase:", data);
-  
       
       if (typeof data === 'string') {
         try {
           data = JSON.parse(data); 
         } catch (e) {
-          console.error("❌ Failed to parse blog data:", e);
+          console.error("Failed to parse blog data:", e);
           return setBlogs([]);
         }
       }
@@ -32,10 +30,8 @@ const BlogPage = () => {
           content: blog?.content || "No content",
           author: blog?.author || "Anonymous"
         }));
-        console.log("✅ Cleaned blog array:", blogArray);
         setBlogs(blogArray);
       } else {
-        console.warn("⚠️ No valid data found at 'blogs'");
         setBlogs([]);
       }
     });
@@ -45,7 +41,7 @@ const BlogPage = () => {
   
   return (
     <div className="blog-container">
-      <h1 className="blog-title">Our Blog</h1>
+      <h1 className="blog-title">Our Blogs</h1>
       <div className="blog-grid">
         {blogs.map((blog, index) => (
           <div key={index} className="blog-card">

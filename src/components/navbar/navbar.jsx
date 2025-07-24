@@ -20,9 +20,6 @@ export default function Navbar({ onNavigate, onLogout}) {
           <li onClick={onLogout}>Logout</li>
         </ul>
 
-        
-    
-
         <div
         className={`navbar-toggle ${isOpen ? 'open' : ''}`}
         onClick={toggleMenu}

@@ -5,7 +5,7 @@ import './explore.css';
 
 const ExplorePage = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(false);  // start with false to avoid flicker on first render
+  const [loading, setLoading] = useState(false);  
 
   useEffect(() => {
     const loadProjects = async () => {

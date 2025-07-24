@@ -23,7 +23,6 @@ function App() {
  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // Only update user state if not currently on signup page
       if (currentPage !== 'signup') {
         setUser(user);
         if (!user && currentPage !== 'login') {
